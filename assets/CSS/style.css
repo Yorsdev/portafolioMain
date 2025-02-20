@@ -47,7 +47,6 @@ ul {
 
 
 body {
-    
     font-family: 'Inter', sans-serif;
     background-color: var(--background-color);
     color: #CCD6F6;
@@ -63,12 +62,9 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
-    width: 63%;
-    max-width: 1440px;
-    
+    max-width: 63%;    
 }
 
 
@@ -85,7 +81,7 @@ main {
     transition: opacity 0.7s ease-out;
 }
 
-/*===== Loader =====*/
+
 .loader {
 	position: fixed;
 	top: 0;
@@ -144,7 +140,56 @@ main {
 }
 
 
-/* ======================== END HERO ======================== */
+
+.navbar__toggles {
+    gap: 1rem;
+    position: fixed;
+    top: 100px;
+    right: 40px;   
+
+    .navbar__toggle--language {
+        .navbar__toggle--language-label {
+            width: 50px;
+            height: 25px;
+            position: relative;
+            display: block;
+            background: #ebebeb;
+            border-radius: 20px;
+            box-shadow: inset 0px 2px 5px #00000066, inset 0px -2px 5px #ffffff66;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &::after {
+                content: '';
+                width: 22px;
+                height: 22px;
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                background-image: url(/assets/Imgs/reino-unido.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+                box-shadow: 0px 5px 10px #00000033;
+                transition: 0.3s;
+            }
+        }
+
+        .navbar__toggle--language-input {
+            visibility: hidden;
+
+            &:checked + label {
+                &::after {
+                    left: 48px;
+                    top: 1px;
+                    transform: translateX(-100%);
+                    background-image: url(/assets/Imgs/espana.png);
+                }
+            }
+        }
+    }
+}
+
 
 
 .hero {
@@ -193,7 +238,7 @@ main {
 }
 
 .nav__links li a:hover {
-    color: var(--color_subtitle);
+    color: var(--color-text-cages);
 }
 
 
@@ -295,7 +340,7 @@ main {
 
 .home__social {
     position: fixed;
-    bottom: 20px;
+    bottom: 10%;
     left: 3rem;
     z-index: 100;
     flex-direction: column;
@@ -315,7 +360,7 @@ main {
 
 .email {
     position: fixed;
-    bottom: 20px; 
+    bottom: 10%; 
     right: 4rem; 
     z-index: 100;
     font-size: 14px;
@@ -407,8 +452,7 @@ main {
 .skills__description {
     color: var(--color-title-little);
     margin-bottom: 50px;
-    width: 100%;
-    
+    width: 100%;    
 }
 .skills__wrapper {
     display: flex;
@@ -465,7 +509,7 @@ main {
     }
 
     &[open] {
-        height: 400px;
+        height: 250px;
 
         .skills__cards-title {
             height: auto;
@@ -486,10 +530,11 @@ main {
     }
 }
 
-/* ================================PROJECTS============================== */
+
 
 .projects {
-    padding: 10px;
+    padding-top: 90px;
+    margin-top: 70px;
 }
 
 .projects__container-box {
@@ -523,7 +568,7 @@ main {
     grid-template-columns: auto 1fr;
     gap: 20px;
     align-items: start;
-    margin-top: 4%;
+    margin-top: 10%;
 }
 
 .grid__container--img {
@@ -569,16 +614,6 @@ main {
 }
 
 
-
-/* ==============================STOP PROJECTS========================== */
-
-
-
-
-
-
-/* HABILIDADES BLANDAS AUN NOOOOOOOOOOOOO*/ 
-
 .skills__tags {
     flex-direction: column;
     margin-top: 70px;
@@ -600,22 +635,12 @@ main {
 }
 
 
-/*=======================END SKILLS==========================*/
-
-
-
-
-
-
-
-
-/* ////////////////////////////CONTACTO////////////////////////// */
-
-
 #contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-top: 90px;
+    margin: 0 0 20% 0;
     width: 100%;
     .contact__container {
         margin-left: 40px;  
@@ -669,11 +694,51 @@ main {
             resize: none;
         }
     }
-    .contact__form-modal {
-        position: fixed;
-        top: 50%;
+}
+
+.contact__form-modal {
+    position: fixed;
+    align-self: flex-start;
+    margin: 0 auto;
+    top: 50%;
+    right: 20px;
+    background-color: var(--color-text-cages);
+    color: var(--color_subtitle);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    font-weight: bold;
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+    z-index: 100;
+}
+
+.contact__form-modal[open] {
+    display: block;
+}
+
+.contact__form-modal button {
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 1rem;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+    opacity: 0;
+    transform: translateY(-10px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
     }
 }
+
+
 .contact__form h3 {
     margin-bottom: 20px;
     color: var(--color-text-cages);
@@ -683,14 +748,28 @@ main {
 
 /* Footer */
 .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: var(--primary-color-card);
+    background-size: fill;
+    width: 105%;
+    height: 120px;
     text-align: center;
     padding: 20px;
     font-size: 14px;
 }
 .footer__copy {
     text-align: center;
-    border-top: 1px solid #de0808;
+    width: 100%;
     padding-top: 2rem;
+    color: var(--color-title-little);
+
+    #currentyear {
+        font-size: 16px;
+        font-weight: bold;
+        color: var(--color_subtitle);
+    }
 }
 
 .footer a {
