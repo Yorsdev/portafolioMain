@@ -29,7 +29,7 @@ function initCustomCursor() {
   
     function mostrarImagen() {
       const img = document.createElement("img");
-      img.src = "./assets/imgs/charge_photo.gif";
+      img.src = "/assets/imgs/charge_photo.gif";
       img.style.position = "fixed";
       img.style.left = "50%";
       img.style.top = "50%";
