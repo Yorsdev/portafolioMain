@@ -19,12 +19,23 @@
 *::before {
     cursor: none !important;
 }
+input, textarea, button, a {
+    cursor: default !important;
+}
+a:focus, button:focus {
+    outline: 2px dashed var(--color_subtitle);
+    outline-offset: 4px;
+}
+.link-external {
+    color: var(--color_subtitle);
+}
+.link-external:hover {
+    color: blueviolet;
+}
 .flex--container {
-    .flex--container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 * {
@@ -40,6 +51,13 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+.features-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+.features-list li::marker {
+    color: var(--color_subtitle);
 }
 
 ::selection {
@@ -77,7 +95,10 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 63%;    
+    /* max-width: 63%;     */
+    max-width: 100%;
+    width: 90%;
+    padding: 0 5%;
 }
 
 
@@ -563,7 +584,19 @@ main {
 
     animation-timeline: --reveal;
     animation-range: entry 25% cover 50%;
-
+}
+.logos-tech {
+    display: flex;
+    justify-content: space-between;
+}
+.logos-tech .bx{
+    font-size: 63px;
+    color:grey;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+.logos-tech .bx:hover{
+    color: var(--color_subtitle);
+    transform: scale(1.08);
 }
 @keyframes show {
     from {
@@ -579,25 +612,43 @@ main {
     grid-template-columns: auto 1fr;
     gap: 20px;
     align-items: start;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .grid__container--img {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    gap: 20px 50px;
 }
 
 .grid__container--img img{
-    width: 250px;
+    width: 100%;
     height: 120px;
     object-fit: cover;
     border-radius: 10px;
 }
+
+.grid--container--p {
+    padding: 0;
+    /* margin-left: 20px; */
+}
+.grid--container--p h3 {
+    margin: 10px 0;
+    padding-top: 20px;
+}
+
+.grid--container--p1 {
+    /* margin: 0 45px; */
+}
+
+.titleh3 {
+    color: var(--color-text-cages);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
 .projects__btn {
     margin: 10px 0;
     padding: 10px 20px;
+    width: 100%;
     font-size: 16px;
     border-radius: 7px;
     border: 2.5px solid var(--color-text-cages);
@@ -609,19 +660,16 @@ main {
 .projects__btn:hover {
     transform: scale(1.1);
     box-shadow: 5px 5px 4px var(--color_subtitle);
+    
 }
 
+.tittle__box {
+    color: var(--color-text-cages);
+    font-size: 1.8rem;
+}
 
-.projects__container--box {
-    .tittle__box {
-        color: var(--color-text-cages);
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
-
-    p {
-        color: var(--color-title-little);
-    }
+p {
+    color: var(--color-title-little);
 }
 
 
