@@ -565,7 +565,7 @@ main {
 }
 
 .projects {
-    padding-top: 90px;
+    padding-top: 60px;
     margin-top: 70px;
 }
 
@@ -598,6 +598,7 @@ main {
     color: var(--color_subtitle);
     transform: scale(1.08);
 }
+
 @keyframes show {
     from {
         opacity: 0; scale: 40%;
@@ -658,10 +659,30 @@ main {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 .projects__btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.04);
     box-shadow: 5px 5px 4px var(--color_subtitle);
     
 }
+
+.projects__btn--form {
+    margin: 10px 0;
+    padding: 10px 20px;
+    width: 95%;
+    font-size: 16px;
+    border-radius: 7px;
+    border: 2.5px solid var(--color-text-cages);
+    background: transparent;
+    color: var(--color-title-primary);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.projects__btn--form:hover {
+    transform: scale(1.02);
+    box-shadow: 5px 5px 4px var(--color_subtitle);
+    
+}
+
+
 
 .tittle__box {
     color: var(--color-text-cages);
@@ -726,6 +747,14 @@ p {
     }
 }
 
+.contact__form-container {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+
 .contact__form {
     width: 100%;
     padding: 3rem 1.5rem 2rem;
@@ -735,6 +764,7 @@ p {
 
     .contact__form-group {
         margin-bottom: 13px;
+        width: 95%;
 
         .contact__form-label {
             display: block;
@@ -748,11 +778,16 @@ p {
             border-radius: 5px;
             background-color: #2b2d53;
             border: 1px solid var(--color_subtitle);
+            color: var(--color_subtitle);
+            caret-color: var(--color-text-cages);
         }
         textarea {
             resize: none;
         }
     }
+}
+#message-box {
+    font-size: 1.6em;
 }
 
 .contact__form-modal {
@@ -813,7 +848,7 @@ p {
     background-color: var(--primary-color-card);
     background-size: fill;
     width: 105%;
-    height: 120px;
+    height: 60px;
     text-align: center;
     padding: 20px;
     font-size: 14px;
