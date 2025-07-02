@@ -17,8 +17,8 @@ function initCustomCursor() {
     
       const now = Date.now();
       if (now - lastClickTime < 500) {
-        if (clickCount >= 5) {
-          mostrarImagen();
+        if (clickCount >= 4) {
+          showImage();
           clickCount = 0;
         }
       } else {
@@ -27,19 +27,22 @@ function initCustomCursor() {
       lastClickTime = now;
     });
   
-    function mostrarImagen() {
+    function showImage() {
       const img = document.createElement("img");
-      img.src = "/assets/imgs/charge_photo.gif";
+      img.src = "/assets/imgs/message_by_Overclicked.png";
       img.style.position = "fixed";
       img.style.left = "50%";
       img.style.top = "50%";
       img.style.transform = "translate(-50%, -50%)";
-      img.style.zIndex = "10000";
+      img.style.zIndex = "50";
+      img.style.width = "450px";
+      img.style.boxShadow = "rgba(228, 5, 120, 0.56) 0px 22px 190px 40px";
+      img.style.borderRadius = "8px"
       document.body.appendChild(img);
   
       setTimeout(() => {
         img.remove();
-      }, 2000);
+      }, 3100);
     }
   }
   
